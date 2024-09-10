@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.font-nunito {
+  font-family: "Nunito Sans", sans-serif !important;
+}
+
+@keyframes loader {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  animation: loader 2s linear infinite;
+}
+
+@media (max-width: 640px) {
+  .card-shadow {
+    box-shadow: 0px 4px 21px 1px #2463eb0d;
+  }
+  .card-image {
+    box-shadow: 0px 4px 21px 1px #2463eb0d;
+  }
+}
