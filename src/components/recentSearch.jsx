@@ -9,9 +9,12 @@ const recentSeraches = [
 
 const RecentSearch = () => {
   const [showDetail, setShowDetail] = useState(null);
+
   return (
     <div className="mt-8">
-      <h4 className="sm:text-sm text-xs font-normal text-black">Recent Searches</h4>
+      <h4 className="sm:text-sm text-xs font-normal text-black">
+        Recent Searches
+      </h4>
       <div className="flex items-center sm:gap-8 gap-4 mt-4 cursor-pointer flex-nowrap">
         {recentSeraches.map((item, index) => (
           <div
@@ -19,8 +22,18 @@ const RecentSearch = () => {
             key={index}
             onClick={() => setShowDetail(item)}
           >
-            <p className="text-[#6D7280] sm:text-xs text-[10px] font-medium">{item.label}</p>
-            <ChevronDown />
+            <p
+              className={`sm:text-xs text-[10px] font-medium ${
+                item?.id === showDetail?.id ? "text-black" : "text-[#6D7280]"
+              }`}
+            >
+              {item.label}
+            </p>
+            <ChevronDown
+              className={`transition-transform ease-in-out ${
+                item?.id == showDetail?.id ? "rotate-180" : "rotate-0"
+              }`}
+            />
           </div>
         ))}
       </div>
